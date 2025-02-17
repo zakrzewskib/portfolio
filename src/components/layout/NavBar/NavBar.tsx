@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { NavLink } from 'react-router';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
+import { RightNavBar } from './RightNavBar';
 
 export type Page = {
   text: string;
@@ -45,6 +46,8 @@ export const NavBar = () => {
               </Button>
             ))}
           </Box>
+
+          <RightNavBar />
         </Toolbar>
       </Container>
     </AppBar>
