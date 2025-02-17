@@ -1,28 +1,27 @@
-import { Link } from '@mui/material';
+import { Link, useMediaQuery, useTheme } from '@mui/material';
 import { NavLink } from 'react-router';
 
-interface LogoProps {
-  isMobile?: boolean;
-}
+export const Logo = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-export const Logo = ({ isMobile = false }: LogoProps) => {
   return (
     <Link
       component={NavLink}
       to="/"
       underline="hover"
       color="textPrimary"
-      variant={isMobile ? 'h5' : 'h6'}
+      variant={'h6'}
       noWrap
       sx={{
-        mr: 2,
-        flexGrow: isMobile ? 1 : 0,
-        display: isMobile ? { xs: 'flex', md: 'none' } : { xs: 'none', md: 'flex' },
+        mr: { xs: 0, md: 2 },
+        ml: { xs: 2, md: 0 },
+        flexGrow: { xs: 1, md: 0 },
         fontFamily: 'monospace',
         fontWeight: 700,
       }}
     >
-      Bartosz Zakrzewski
+      {!isMobile ? 'Bartosz Zakrzewski' : 'BZ'}
     </Link>
   );
 };
