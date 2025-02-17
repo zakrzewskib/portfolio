@@ -6,9 +6,9 @@ import LeetCodeIcon from '../../../assets/leetcode-icon-icons8.png';
 import { ThemeSwitcher } from './ThemeSwitcher';
 import { CustomIcon } from '../../ui/CustomIcon';
 
-export const RightNavBar = () => {
+export const NavBarIcons = () => {
   return (
-    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+    <Box sx={{ display: 'flex' }}>
       <IconButton
         size="large"
         aria-label="linkedin link"

@@ -4,8 +4,15 @@ import { NavLink } from 'react-router';
 
 export const MainPage = () => {
   return (
-    <Box sx={{ display: 'flex', gap: '96px', marginBlock: 16 }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '50%' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        gap: { xs: 4, md: 16 },
+        marginBlock: { xs: 4, md: 16 },
+        flexDirection: { xs: 'column', md: 'row' },
+      }}
+    >
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: { md: '100%' } }}>
         <Typography variant="h3" component="h1">
           Hello! I'm Bartosz Zakrzewski
         </Typography>
@@ -14,13 +21,13 @@ export const MainPage = () => {
         </Typography>
       </Box>
 
-      <Box sx={{ width: '50%' }}>
+      <Box sx={{ width: { md: '100%' } }}>
         <Typography variant="body1">
           I worked as a Software Engineer for 2 years now. During that time I discovered that the most important skills
           in IT are:
         </Typography>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px', mb: 2, mt: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
           <Skill>#adaptability</Skill>
           <Skill>#learning</Skill>
         </Box>
