@@ -7,6 +7,7 @@ import { NavLink } from 'react-router';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
 import { RightNavBar } from './RightNavBar';
+import { Breakpoint } from '@mui/material';
 
 export type Page = {
   text: string;
@@ -24,10 +25,14 @@ const pages = [
   },
 ];
 
-export const NavBar = () => {
+interface NavBarProps {
+  maxWidth: Breakpoint;
+}
+
+export const NavBar = ({ maxWidth }: NavBarProps) => {
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" component="nav">
+      <Container maxWidth={maxWidth} component="nav">
         <Toolbar disableGutters>
           <Logo />
 

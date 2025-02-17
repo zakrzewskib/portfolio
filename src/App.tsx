@@ -14,8 +14,8 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline /> {/* enable dark mode for the background */}
-      <NavBar />
-      <Container maxWidth="xl" component="main">
+      <NavBar maxWidth="lg" />
+      <Container maxWidth="lg" component="main">
         <Router />
       </Container>
       <Footer />

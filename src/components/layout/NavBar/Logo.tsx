@@ -11,6 +11,7 @@ export const Logo = ({ isMobile = false }: LogoProps) => {
       component={NavLink}
       to="/"
       underline="hover"
+      color="textPrimary"
       variant={isMobile ? 'h5' : 'h6'}
       noWrap
       sx={{
@@ -19,7 +20,6 @@ export const Logo = ({ isMobile = false }: LogoProps) => {
         display: isMobile ? { xs: 'flex', md: 'none' } : { xs: 'none', md: 'flex' },
         fontFamily: 'monospace',
         fontWeight: 700,
-        color: 'inherit',
       }}
     >
       Bartosz Zakrzewski
