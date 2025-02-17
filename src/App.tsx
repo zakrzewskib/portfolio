@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { NavBar } from './components';
+import { NavBar, Footer } from './components';
 import { Router } from './router';
 
 const darkTheme = createTheme({
@@ -18,6 +18,7 @@ function App() {
       <Container maxWidth="xl" component="main">
         <Router />
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 }
