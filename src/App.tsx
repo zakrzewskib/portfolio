@@ -2,8 +2,8 @@ import { Container } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { NavBar, Footer } from './components';
-import { Router } from './router';
 import { MAX_WIDTH } from './constants';
+import { Router } from './router';
 
 const darkTheme = createTheme({
   colorSchemes: {
