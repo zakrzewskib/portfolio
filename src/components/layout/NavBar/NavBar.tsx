@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import { NavLink } from 'react-router';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
+import { RightNavBar } from './RightNavBar';
+import { LayoutProps } from '../../../types';
 
 export type Page = {
   text: string;
@@ -23,10 +25,10 @@ const pages = [
   },
 ];
 
-export const NavBar = () => {
+export const NavBar = ({ maxWidth }: LayoutProps) => {
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" component="nav">
+      <Container maxWidth={maxWidth} component="nav">
         <Toolbar disableGutters>
           <Logo />
 
@@ -45,6 +47,8 @@ export const NavBar = () => {
               </Button>
             ))}
           </Box>
+
+          <RightNavBar />
         </Toolbar>
       </Container>
     </AppBar>
