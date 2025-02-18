@@ -66,3 +66,8 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* Custom styles */
+.maxWidthForText {
+  max-width: 75ch;
+}

@@ -7,12 +7,12 @@ export const MainPage = () => {
     <Box
       sx={{
         display: 'flex',
-        gap: { xs: 4, md: 16 },
+        gap: { xs: 4, md: 8, lg: 16 },
         marginBlock: { xs: 4, md: 16 },
         flexDirection: { xs: 'column', md: 'row' },
       }}
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: { md: '100%' } }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, flex: 1 }}>
         <Typography variant='h3' component='h1'>
           Hello! I'm Bartosz Zakrzewski
         </Typography>
@@ -21,13 +21,16 @@ export const MainPage = () => {
         </Typography>
       </Box>
 
-      <Box sx={{ width: { md: '100%' } }}>
+      <Box className='maxWidthForText' sx={{ flex: 1 }}>
         <Typography variant='body1'>
-          I worked as a Software Engineer for 2 years now. During that time I discovered that the most important skills
-          in IT are:
+          I worked as a Software Engineer for{' '}
+          <Typography fontWeight='bold' component='span'>
+            2 years
+          </Typography>{' '}
+          now. During that time I discovered that the most important skills in IT are:
         </Typography>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
+        <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
           <Skill>#adaptability</Skill>
           <Skill>#learning_new_things</Skill>
         </Box>
