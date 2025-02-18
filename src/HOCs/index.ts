@@ -1,1 +1,1 @@
-export * from './withIsDarkMode';
+export * from './withDarkMode';

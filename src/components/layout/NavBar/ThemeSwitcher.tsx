@@ -2,7 +2,7 @@ import { grey } from '@mui/material/colors';
 import { styled, useColorScheme } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import { ChangeEvent } from 'react';
-import { withIsDarkMode } from '../../../HOCs';
+import { withDarkMode } from '../../../HOCs';
 import { useIsDarkMode } from '../../../hooks';
 
 const MaterialUIThemeSwitch = styled(Switch)(({ theme }) => ({
@@ -61,7 +61,7 @@ const MaterialUIThemeSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export const ThemeSwitcher = withIsDarkMode(() => {
+export const ThemeSwitcher = withDarkMode(() => {
   const { setMode } = useColorScheme();
   const isDarkMode = useIsDarkMode();
 

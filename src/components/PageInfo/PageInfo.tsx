@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { withIsDarkMode } from '../../HOCs';
+import { withDarkMode } from '../../HOCs';
 import { useIsDarkMode } from '../../hooks';
 
 const codeToShow = `export const Logo = () => {
@@ -29,7 +29,7 @@ const codeToShow = `export const Logo = () => {
   );
 };`;
 
-export const PageInfo = withIsDarkMode(() => {
+export const PageInfo = withDarkMode(() => {
   const isDarkMode = useIsDarkMode();
 
   const style = isDarkMode ? atomOneDark : atomOneLight;
