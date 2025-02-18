@@ -8,9 +8,8 @@ export const Logo = () => {
   return (
     <Link
       component={NavLink}
-      to="/"
-      underline="hover"
-      color="textPrimary"
+      to='/'
+      underline='hover'
       variant={'h6'}
       noWrap
       sx={{
@@ -19,6 +18,7 @@ export const Logo = () => {
         flexGrow: { xs: 1, md: 0 },
         fontFamily: 'monospace',
         fontWeight: 700,
+        color: 'inherit',
       }}
     >
       {!isMobile ? 'Bartosz Zakrzewski' : 'BZ'}
