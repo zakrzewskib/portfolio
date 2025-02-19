@@ -6,10 +6,10 @@ export const MainPage = () => {
   return (
     <Box
       sx={{
-        mt: '-128px', // - footer and navbar height
+        mt: { xs: 4, md: '-128px' },
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: { xs: 'start', md: 'center' },
         height: '100vh',
       }}
     >
