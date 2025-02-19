@@ -6,7 +6,7 @@ export const MainPage = () => {
   return (
     <Box
       sx={{
-        mt: '-64px', // - fixed footer height to center content
+        mt: '-128px', // - footer and navbar height
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

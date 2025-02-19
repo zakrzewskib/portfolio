@@ -64,7 +64,7 @@ export const PageInfo = withDarkMode(() => {
           popular UI library. {isFlexColumn ? 'Below' : 'On the right'} you can see some of my code. It and the entire
           page has:
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
-            <Skill>#responsiveness</Skill>
+            <Skill>#responsive design</Skill>
             <Skill>#React Router</Skill>
             <Skill>#theming</Skill>
           </Box>
