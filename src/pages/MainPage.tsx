@@ -38,7 +38,7 @@ export const MainPage = () => {
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
             <Skill>#adaptability</Skill>
-            <Skill>#learning_new_things</Skill>
+            <Skill>#learning new things</Skill>
           </Box>
           <Typography variant='body1'>
             There are so many frameworks and libraries and also some internal technologies at specific companies that
