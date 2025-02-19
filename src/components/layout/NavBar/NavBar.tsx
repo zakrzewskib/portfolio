@@ -1,13 +1,13 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Toolbar from '@mui/material/Toolbar';
 import { NavLink } from 'react-router';
+import { LayoutProps } from '../../../types';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
 import { NavBarIcons } from './NavBarIcons';
-import { LayoutProps } from '../../../types';
 
 export type Page = {
   text: string;
@@ -27,8 +27,8 @@ const pages = [
 
 export const NavBar = ({ maxWidth }: LayoutProps) => {
   return (
-    <AppBar position="static">
-      <Container maxWidth={maxWidth} component="nav">
+    <AppBar position='sticky'>
+      <Container maxWidth={maxWidth} component='nav'>
         <Toolbar disableGutters>
           <MobileMenu pages={pages} />
 
