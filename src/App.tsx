@@ -22,7 +22,7 @@ function App() {
       <Container maxWidth={MAX_WIDTH} component='main'>
         <Router />
       </Container>
-      <Footer maxWidth={MAX_WIDTH} isOnMainPage={pathname === '/'} />
+      <Footer maxWidth={MAX_WIDTH} isPositionFixed={pathname !== '/skills'} />
     </ThemeProvider>
   );
 }

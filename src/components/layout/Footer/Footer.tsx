@@ -2,12 +2,12 @@ import { AppBar, Container, Link, Toolbar } from '@mui/material';
 import { LayoutProps } from '../../../types';
 
 interface FooterProps extends LayoutProps {
-  isOnMainPage?: boolean;
+  isPositionFixed?: boolean;
 }
 
-export const Footer = ({ maxWidth, isOnMainPage = false }: FooterProps) => {
+export const Footer = ({ maxWidth, isPositionFixed = false }: FooterProps) => {
   return (
-    <AppBar position={isOnMainPage ? 'fixed' : 'static'} sx={{ top: 'auto', bottom: 0 }} component='footer'>
+    <AppBar position={isPositionFixed ? 'fixed' : 'static'} sx={{ top: 'auto', bottom: 0 }} component='footer'>
       <Container maxWidth={maxWidth}>
         <Toolbar disableGutters sx={{ display: 'flex', gap: '4px' }}>
           <span>Icons from:</span>
