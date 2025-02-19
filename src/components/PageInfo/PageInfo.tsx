@@ -83,3 +83,15 @@ export const PageInfo = withDarkMode(() => {
     </Box>
   );
 });
+
+// todo: Customize syntax highlighter font
+// https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/222
+
+// customStyle={{
+//   fontSize: '14px',
+// }}
+// codeTagProps={{
+//   style: {
+//     fontSize: 'inherit',
+//   },
+// }}
