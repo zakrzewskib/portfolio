@@ -1,9 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router';
+import { HashRouter as BrowserRouter } from 'react-router';
 
-import './index.css';
 import App from './App.tsx';
+import './index.css';
 
 // Fonts
 import '@fontsource/roboto/300.css';
