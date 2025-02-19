@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { withDarkMode } from '../../HOCs';
@@ -34,12 +34,18 @@ export const Logo = () => {
 };`;
 
 export const PageInfo = withDarkMode(() => {
+  const theme = useTheme();
+  const isFlexColumn = useMediaQuery(theme.breakpoints.down('lg'));
   const isDarkMode = useIsDarkMode();
 
   const style = isDarkMode ? atomOneDark : atomOneLight;
 
   return (
-    <Box sx={{ marginBlock: { xs: 4, lg: 16 } }}>
+    <Box sx={{ marginBlock: 4 }}>
+      <Typography variant='h3' component='h2' sx={{ mb: 4 }}>
+        Layout
+      </Typography>
+
       <Box
         sx={{
           display: 'flex',
@@ -55,11 +61,12 @@ export const PageInfo = withDarkMode(() => {
             <Skill>#TypeScript</Skill>
           </Box>
           React.js and TypeScript are main technologies that I know and use for webdev. I also wanted to try out MUI -
-          popular UI library, which I don't know that well. On the right you can Logo component code, which has:
+          popular UI library. {isFlexColumn ? 'Below' : 'On the right'} you can see some of my code. It and the entire
+          page has:
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
-            <Skill>#Responsiveness</Skill>
-            <Skill>#React router</Skill>
-            <Skill>#Theming (dark and light mode)</Skill>
+            <Skill>#responsiveness</Skill>
+            <Skill>#React Router</Skill>
+            <Skill>#theming</Skill>
           </Box>
           Also I displayed this code with:
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
