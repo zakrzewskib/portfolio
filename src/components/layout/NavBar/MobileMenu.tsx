@@ -1,12 +1,11 @@
-import { useState, MouseEvent } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { MouseEvent, useState } from 'react';
 import { NavLink } from 'react-router';
 import { Page } from './NavBar';
-import { Link } from '@mui/material';
 
 interface MobileMenuProps {
   pages: Page[];
@@ -25,17 +24,17 @@ export const MobileMenu = ({ pages }: MobileMenuProps) => {
   return (
     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
       <IconButton
-        size="large"
-        aria-label="navigation"
-        aria-controls="menu-navbar"
-        aria-haspopup="true"
+        size='large'
+        aria-label='navigation'
+        aria-controls='menu-navbar'
+        aria-haspopup='true'
         onClick={handleOpenNavMenu}
-        color="inherit"
+        color='inherit'
       >
         <MenuIcon />
       </IconButton>
       <Menu
-        id="menu-navbar"
+        id='menu-navbar'
         anchorEl={anchorElNav}
         anchorOrigin={{
           vertical: 'bottom',
@@ -51,10 +50,8 @@ export const MobileMenu = ({ pages }: MobileMenuProps) => {
         sx={{ display: { xs: 'block', md: 'none' } }}
       >
         {pages.map((page) => (
-          <MenuItem key={page.link} onClick={handleCloseNavMenu}>
-            <Link underline="none" sx={{ textAlign: 'center', color: 'inherit' }} component={NavLink} to={page.link}>
-              {page.text}
-            </Link>
+          <MenuItem key={page.link} onClick={handleCloseNavMenu} component={NavLink} to={page.link}>
+            {page.text}
           </MenuItem>
         ))}
       </Menu>

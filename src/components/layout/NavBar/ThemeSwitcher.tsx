@@ -1,8 +1,9 @@
-import { useMediaQuery } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import { styled, useColorScheme } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import { ChangeEvent } from 'react';
+import { withDarkMode } from '../../../HOCs';
+import { useIsDarkMode } from '../../../hooks';
 
 const MaterialUIThemeSwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -60,15 +61,9 @@ const MaterialUIThemeSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export const ThemeSwitcher = () => {
-  const { mode, setMode } = useColorScheme();
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-  // mode is undefined on the first render
-  // by default ThemeProvider rerenders when theme contains light and dark schemes
-  if (!mode) {
-    return null;
-  }
+export const ThemeSwitcher = withDarkMode(() => {
+  const { setMode } = useColorScheme();
+  const isDarkMode = useIsDarkMode();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setMode(event.target.checked ? 'dark' : 'light');
@@ -79,7 +74,7 @@ export const ThemeSwitcher = () => {
       sx={{ m: 1 }}
       inputProps={{ 'aria-label': 'switch color theme' }}
       onChange={handleChange}
-      defaultChecked={mode === 'dark' || (mode === 'system' && prefersDarkMode)}
+      checked={isDarkMode}
     />
   );
-};
+});
