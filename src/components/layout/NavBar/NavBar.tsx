@@ -23,6 +23,10 @@ const pages = [
     text: 'Experience',
     link: '/experience',
   },
+  {
+    text: 'Teaching',
+    link: '/teaching',
+  },
 ];
 
 export const NavBar = ({ maxWidth }: LayoutProps) => {
