@@ -40,7 +40,12 @@ export const NBAScoresInfo = () => {
           </Box>
         </Box>
 
-        <NBAScores />
+        <Box flex={1}>
+          <Typography variant='h5' mb={2}>
+            Recent NBA Games:
+          </Typography>
+          <NBAScores />
+        </Box>
       </Box>
     </Box>
   );

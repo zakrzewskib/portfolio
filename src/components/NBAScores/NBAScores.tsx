@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import moment from 'moment';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -25,29 +25,26 @@ export const NBAScores = () => {
   };
 
   return (
-    <Box flex={1}>
-      <InfiniteScroll
-        dataLength={data.data.length}
-        next={handleLoadMoreGames}
-        hasMore={true}
-        loader={<GamesLoadingPlaceholder />}
-        height={250}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px',
-          padding: 6,
-        }}
-      >
-        {data.data.map((game) => (
-          <NBAGame
-            key={game.id}
-            game={game}
-            HomeTeamLogo={nbaLogos[game.home_team.abbreviation as keyof typeof nbaLogos]}
-            VisitTeamLogo={nbaLogos[game.visitor_team.abbreviation as keyof typeof nbaLogos]}
-          />
-        ))}
-      </InfiniteScroll>
-    </Box>
+    <InfiniteScroll
+      dataLength={data.data.length}
+      next={handleLoadMoreGames}
+      hasMore={true}
+      loader={<GamesLoadingPlaceholder />}
+      height={250}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '12px',
+      }}
+    >
+      {data.data.map((game) => (
+        <NBAGame
+          key={game.id}
+          game={game}
+          HomeTeamLogo={nbaLogos[game.home_team.abbreviation as keyof typeof nbaLogos]}
+          VisitTeamLogo={nbaLogos[game.visitor_team.abbreviation as keyof typeof nbaLogos]}
+        />
+      ))}
+    </InfiniteScroll>
   );
 };

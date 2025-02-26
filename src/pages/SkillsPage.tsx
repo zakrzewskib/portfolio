@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { NBAScoresInfo } from '../components/NBAScores/NBAScoresInfo';
 import { PageInfo } from '../components/PageInfo/PageInfo';
 
@@ -12,9 +12,9 @@ export const SkillsPage = () => {
     >
       <PageInfo />
       <NBAScoresInfo />
-      <Typography variant='body1' sx={{ marginBlock: 4 }}>
+      {/* <Typography variant='body1' sx={{ marginBlock: 4 }}>
         Work in progress...
-      </Typography>
+      </Typography> */}
     </Box>
   );
 };
