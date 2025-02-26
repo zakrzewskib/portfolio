@@ -1,5 +1,6 @@
 import { Box, Paper, Typography } from '@mui/material';
 
+import moment from 'moment';
 import { Icon } from '../../../libraries/React-NBA-Logos-master/src';
 import { GameDTO } from '../../../types';
 
@@ -11,9 +12,10 @@ interface NBAGameProps {
 
 export const NBAGame = ({ game, HomeTeamLogo, VisitTeamLogo }: NBAGameProps) => {
   const { date, home_team, visitor_team, home_team_score, visitor_team_score } = game;
+
   return (
     <Paper sx={{ paddingBlock: 2, paddingInline: 2 }}>
-      <Typography mb={2}>{date}</Typography>
+      <Typography mb={2}>{home_team_score !== 0 ? moment(date).format('Do MMM YYYY') : 'Coming soon'}</Typography>
       <Box display='flex' flexDirection='column' gap={1}>
         {/* todo: Extract to separate TeamScore component */}
         <Box display='flex' alignItems='center' gap={2}>

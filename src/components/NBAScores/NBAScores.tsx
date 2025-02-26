@@ -1,15 +1,15 @@
 import { Box } from '@mui/material';
+import moment from 'moment';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import nbaLogos from '../../libraries/React-NBA-Logos-master/src/index';
 import { useGetGamesQuery } from '../../store/api/nbaAPISlice';
-import { dateToYYYYMMDD } from '../../utils';
 import { GamesLoadingPlaceholder } from './GamesLoadingPlaceholder';
 import { NBAGame } from './NBAGame/NBAGame';
 
 export const NBAScores = () => {
   const [date, setDate] = useState<Date>(new Date());
-  const { data, isLoading } = useGetGamesQuery({ date: dateToYYYYMMDD(date) });
+  const { data, isLoading } = useGetGamesQuery({ date: moment(date).format('YYYY-MM-DD') });
 
   if (isLoading || !data) {
     return <GamesLoadingPlaceholder />;
