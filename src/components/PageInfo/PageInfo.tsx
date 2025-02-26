@@ -1,9 +1,13 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { withDarkMode } from '../../HOCs';
 import { useIsDarkMode } from '../../hooks';
 import { Skill } from '../ui';
+
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
+import atomOneDark from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-dark';
+import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light';
+SyntaxHighlighter.registerLanguage('typescript', ts);
 
 const codeToShow = `import { Link, useMediaQuery, useTheme } from '@mui/material';
 import { NavLink } from 'react-router';
