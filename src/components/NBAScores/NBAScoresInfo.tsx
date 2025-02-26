@@ -16,7 +16,7 @@ export const NBAScoresInfo = () => {
           flexDirection: { xs: 'column', lg: 'row' },
         }}
       >
-        <Box className='maxWidthForText' sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Box className='maxWidthForText' sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
           Websites often need to download some data, which can be implemented in many ways. I decided to use:
           <Box sx={{ mt: 1, mb: 1 }}>
             <Skill>#RTK Query</Skill>
@@ -32,6 +32,11 @@ export const NBAScoresInfo = () => {
               balldontlie
             </Link>{' '}
             for API for Live Sports Data.
+          </Box>
+          <Box>
+            I added infinite scroll with:{' '}
+            <Link href='https://www.npmjs.com/package/react-infinite-scroll-component'>react-infinite-scroll</Link>
+            {/* and some setup on RTK Query was needed: hover over here to see it. todo: Show dialog with code on hover */}
           </Box>
         </Box>
 

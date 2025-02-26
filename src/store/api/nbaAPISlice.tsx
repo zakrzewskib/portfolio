@@ -16,14 +16,17 @@ export const nbaAPI = createApi({
   endpoints: (build) => ({
     getGames: build.query<{ data: GameDTO[]; meta: Meta }, { date: string }>({
       query: ({ date }) => `games?dates[]=${date}`,
+      // Only have one cache entry
       serializeQueryArgs: ({ endpointName }) => {
         return endpointName;
       },
-      forceRefetch({ currentArg, previousArg }) {
-        return currentArg?.date !== previousArg?.date;
-      },
+      // Always merge incoming data to the cache entry
       merge: ({ data: currentCachedData }, { data: newData }) => {
         currentCachedData.push(...newData);
+      },
+      //  Refetch when date changes ('pagination')
+      forceRefetch({ currentArg, previousArg }) {
+        return currentArg?.date !== previousArg?.date;
       },
     }),
   }),
