@@ -14,7 +14,7 @@ export const NBAGame = ({ game, HomeTeamLogo, VisitTeamLogo }: NBAGameProps) => 
   const { date, home_team, visitor_team, home_team_score, visitor_team_score } = game;
 
   return (
-    <Paper sx={{ paddingBlock: 2, paddingInline: 2 }}>
+    <Paper sx={{ paddingBlock: 2, paddingInline: 2 }} elevation={3}>
       <Typography mb={2}>{home_team_score !== 0 ? moment(date).format('Do MMM YYYY') : 'Coming soon'}</Typography>
       <Box display='flex' flexDirection='column' gap={1}>
         {/* todo: Extract to separate TeamScore component */}

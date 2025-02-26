@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import moment from 'moment';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -11,8 +11,12 @@ export const NBAScores = () => {
   const [date, setDate] = useState<Date>(new Date());
   const { data, isLoading } = useGetGamesQuery({ date: moment(date).format('YYYY-MM-DD') });
 
-  if (isLoading || !data) {
+  if (isLoading) {
     return <GamesLoadingPlaceholder />;
+  }
+
+  if (!data) {
+    return <Typography>Games couldn't be loaded...</Typography>;
   }
 
   const handleLoadMoreGames = () => {
@@ -28,7 +32,12 @@ export const NBAScores = () => {
         hasMore={true}
         loader={<GamesLoadingPlaceholder />}
         height={250}
-        style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px',
+          padding: 6,
+        }}
       >
         {data.data.map((game) => (
           <NBAGame
