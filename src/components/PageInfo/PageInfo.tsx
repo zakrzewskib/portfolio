@@ -41,7 +41,7 @@ export const PageInfo = withDarkMode(() => {
   const style = isDarkMode ? atomOneDark : atomOneLight;
 
   return (
-    <Box sx={{ marginBlock: 4 }}>
+    <Box sx={{ marginBlock: 4 }} component='section'>
       <Typography variant='h3' component='h2' sx={{ mb: 4 }}>
         Layout
       </Typography>
