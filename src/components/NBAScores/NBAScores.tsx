@@ -1,15 +1,18 @@
 import { Box } from '@mui/material';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import nbaLogos from '../../libraries/React-NBA-Logos-master/src/index';
 import { useGetGamesQuery } from '../../store/api/nbaAPISlice';
 import { dateToYYYYMMDD } from '../../utils';
+import { GamesLoadingPlaceholder } from './GamesLoadingPlaceholder';
+import { NBAGame } from './NBAGame/NBAGame';
 
 export const NBAScores = () => {
   const [date, setDate] = useState<Date>(new Date());
   const { data, isLoading } = useGetGamesQuery({ date: dateToYYYYMMDD(date) });
 
   if (isLoading || !data) {
-    return <div>Loading...</div>;
+    return <GamesLoadingPlaceholder />;
   }
 
   const handleLoadMoreGames = () => {
@@ -23,14 +26,17 @@ export const NBAScores = () => {
         dataLength={data.data.length}
         next={handleLoadMoreGames}
         hasMore={true}
-        loader={<p>Loading...</p>}
+        loader={<GamesLoadingPlaceholder />}
         height={250}
+        style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
       >
         {data.data.map((game) => (
-          <div key={game.id} style={{ height: '30px' }}>
-            {game.date.toString()} {game.home_team.abbreviation} {game.home_team_score} vs{' '}
-            {game.visitor_team.abbreviation} {game.visitor_team_score}
-          </div>
+          <NBAGame
+            key={game.id}
+            game={game}
+            HomeTeamLogo={nbaLogos[game.home_team.abbreviation as keyof typeof nbaLogos]}
+            VisitTeamLogo={nbaLogos[game.visitor_team.abbreviation as keyof typeof nbaLogos]}
+          />
         ))}
       </InfiniteScroll>
     </Box>

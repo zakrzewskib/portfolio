@@ -35,7 +35,7 @@ export const NBAScoresInfo = () => {
           </Box>
           <Box>
             I added infinite scroll with:{' '}
-            <Link href='https://www.npmjs.com/package/react-infinite-scroll-component'>react-infinite-scroll</Link>
+            <Link href='https://www.npmjs.com/package/react-infinite-scroll-component'>react-infinite-scroll</Link>.
             {/* and some setup on RTK Query was needed: hover over here to see it. todo: Show dialog with code on hover */}
           </Box>
         </Box>

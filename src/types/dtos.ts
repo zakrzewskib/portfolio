@@ -1,4 +1,4 @@
-interface TeamDTO {
+export interface TeamDTO {
   id: number;
   conference: 'East' | 'West';
   division: string;
@@ -10,7 +10,7 @@ interface TeamDTO {
 
 export interface GameDTO {
   id: number;
-  date: Date;
+  date: string;
   datetime: Date;
   season: number;
   status: Date;
