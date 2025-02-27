@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import moment from 'moment';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import nbaLogos from '../../libraries/React-NBA-Logos-master/src/index';
+import nbaLogos from '../../libraries/React-NBA-Logos/src/index';
 import { useGetGamesQuery } from '../../store/api/nbaAPISlice';
 import { GamesLoadingPlaceholder } from './GamesLoadingPlaceholder';
 import { NBAGame } from './NBAGame/NBAGame';

@@ -4,7 +4,7 @@ import { NBAScores } from './NBAScores';
 
 export const NBAScoresInfo = () => {
   return (
-    <Box sx={{ marginBlock: 4 }} component='section'>
+    <Box sx={{ marginBlock: 4 }} component='section' id='nba-api'>
       <Typography variant='h3' component='h2' sx={{ mb: 4 }}>
         Fetching from API
       </Typography>

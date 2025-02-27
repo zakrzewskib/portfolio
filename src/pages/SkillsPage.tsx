@@ -12,9 +12,6 @@ export const SkillsPage = () => {
     >
       <PageInfo />
       <NBAScoresInfo />
-      {/* <Typography variant='body1' sx={{ marginBlock: 4 }}>
-        Work in progress...
-      </Typography> */}
     </Box>
   );
 };
