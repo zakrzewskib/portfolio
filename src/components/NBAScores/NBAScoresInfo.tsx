@@ -21,7 +21,7 @@ export const NBAScoresInfo = () => {
           <Box sx={{ mt: 1, mb: 1 }}>
             <Skill>#RTK Query</Skill>
           </Box>
-          from Redux toolkit for easier
+          from Redux toolkit for easier:
           <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 1, mb: 1, mt: 1 }}>
             <Skill>#data fetching</Skill>
             <Skill>#caching</Skill>

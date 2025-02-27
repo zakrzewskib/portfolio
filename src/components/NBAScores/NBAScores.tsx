@@ -30,7 +30,7 @@ export const NBAScores = () => {
       next={handleLoadMoreGames}
       hasMore={true}
       loader={<GamesLoadingPlaceholder />}
-      height={250}
+      height={350}
       style={{
         display: 'flex',
         flexDirection: 'column',
