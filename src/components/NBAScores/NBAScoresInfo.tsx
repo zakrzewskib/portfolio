@@ -36,7 +36,8 @@ export const NBAScoresInfo = () => {
             <Link target='_blank' href='https://www.balldontlie.io'>
               balldontlie
             </Link>{' '}
-            for API for Live Sports Data. I added:
+            for API for Live Sports Data. I needed to create an account there, get API key and add it into github pages.
+            I also added:
             <Box sx={{ mt: 1, mb: 1 }}>
               <Skill>#infinite scroll</Skill>
             </Box>
