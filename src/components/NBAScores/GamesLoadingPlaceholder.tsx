@@ -1,9 +1,9 @@
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, Typography } from '@mui/material';
 
 export const GamesLoadingPlaceholder = () => {
   return (
-    <p>
+    <Typography variant='body1'>
       Games are loading... <CircularProgress size='16px' />
-    </p>
+    </Typography>
   );
 };

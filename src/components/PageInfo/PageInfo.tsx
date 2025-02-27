@@ -1,9 +1,13 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { withDarkMode } from '../../HOCs';
 import { useIsDarkMode } from '../../hooks';
 import { Skill } from '../ui';
+
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
+import atomOneDark from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-dark';
+import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light';
+SyntaxHighlighter.registerLanguage('typescript', ts);
 
 const codeToShow = `import { Link, useMediaQuery, useTheme } from '@mui/material';
 import { NavLink } from 'react-router';
@@ -35,13 +39,13 @@ export const Logo = () => {
 
 export const PageInfo = withDarkMode(() => {
   const theme = useTheme();
-  const isFlexColumn = useMediaQuery(theme.breakpoints.down('lg'));
+  const isLgAndLower = useMediaQuery(theme.breakpoints.down('lg'));
   const isDarkMode = useIsDarkMode();
 
   const style = isDarkMode ? atomOneDark : atomOneLight;
 
   return (
-    <Box sx={{ marginBlock: 4 }} component='section'>
+    <Box sx={{ marginBlock: 4 }} component='section' id='layout'>
       <Typography variant='h3' component='h2' sx={{ mb: 4 }}>
         Layout
       </Typography>
@@ -61,7 +65,7 @@ export const PageInfo = withDarkMode(() => {
             <Skill>#TypeScript</Skill>
           </Box>
           React.js and TypeScript are main technologies that I know and use for webdev. I also wanted to try out MUI -
-          popular UI library. {isFlexColumn ? 'Below' : 'On the right'} you can see some of my code. It and the entire
+          popular UI library. {isLgAndLower ? 'Below' : 'On the right'} you can see some of my code. It and the entire
           page has:
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
             <Skill>#responsive design</Skill>
@@ -75,7 +79,19 @@ export const PageInfo = withDarkMode(() => {
         </Box>
 
         <Box>
-          <SyntaxHighlighter language='typescript' style={style}>
+          <SyntaxHighlighter
+            language='typescript'
+            style={style}
+            // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/222
+            customStyle={{
+              fontSize: '15px',
+            }}
+            codeTagProps={{
+              style: {
+                fontSize: 'inherit',
+              },
+            }}
+          >
             {codeToShow}
           </SyntaxHighlighter>
         </Box>
@@ -83,15 +99,3 @@ export const PageInfo = withDarkMode(() => {
     </Box>
   );
 });
-
-// todo: Customize syntax highlighter font
-// https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/222
-
-// customStyle={{
-//   fontSize: '14px',
-// }}
-// codeTagProps={{
-//   style: {
-//     fontSize: 'inherit',
-//   },
-// }}
