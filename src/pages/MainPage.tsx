@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import { NavLink } from 'react-router';
+import { Time } from '../components/time/Time';
 import { Skill } from '../components/ui/Skill';
 
 export const MainPage = () => {
@@ -11,8 +12,10 @@ export const MainPage = () => {
         flexDirection: 'column',
         justifyContent: { xs: 'start', md: 'center' },
         height: '100vh',
+        position: 'relative',
       }}
     >
+      <Time />
       <Box
         sx={{
           display: 'flex',
