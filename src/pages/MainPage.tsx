@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { NavLink } from 'react-router';
 import { Skill } from '../components/ui/Skill';
 
@@ -46,13 +46,26 @@ export const MainPage = () => {
             created to test some of the technologies I learned, but also to use technologies that I don't really know
             that well.
           </Typography>
-          <Typography variant='body1'>
+          {/* <Typography variant='body1'>
             Also you can see some more technologies used on the{' '}
             <Link color='textPrimary' component={NavLink} to='/skills'>
               skills
             </Link>{' '}
             page.
-          </Typography>
+          </Typography> */}
+          <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 2, mt: 4 }}>
+            <Button
+              variant='contained'
+              component={NavLink}
+              to='https://linkedin.com/in/bartosz-zakrzewski-5879b7228'
+              target='_blank'
+            >
+              Contact me
+            </Button>
+            <Button variant='outlined' component={NavLink} to='/skills'>
+              See my skills
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Box>
