@@ -14,7 +14,6 @@ export const openAIAPI = createApi({
     },
   }),
   endpoints: (build) => ({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     createPrompt: build.mutation<ChatGPTCompletionResponse, { message: string }>({
       query: ({ message }) => ({
         url: '/chat/completions',

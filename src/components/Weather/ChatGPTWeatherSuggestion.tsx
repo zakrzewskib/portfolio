@@ -1,4 +1,5 @@
 import { CircularProgress, Typography } from '@mui/material';
+import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { useCreatePromptMutation } from '../../store/api/openAIAPISlice';
 import { CurrentWeatherConditions } from '../../types';
@@ -7,6 +8,7 @@ interface ChatGPTWeatherSuggestionProps {
   weather: CurrentWeatherConditions;
 }
 
+// todo: Save chatGPT answer to local storage with tanstack query instead of manual localStorage
 export const ChatGPTWeatherSuggestion = ({ weather }: ChatGPTWeatherSuggestionProps) => {
   const [createPrompt, { isLoading, isError }] = useCreatePromptMutation();
   const [chatGPTAnswer, setChatGPTAnswer] = useState('');
@@ -21,12 +23,38 @@ export const ChatGPTWeatherSuggestion = ({ weather }: ChatGPTWeatherSuggestionPr
       const chatGPTAnswer = await createPrompt({ message: weatherChatGPTQuestion });
 
       if (chatGPTAnswer.data) {
-        console.log(chatGPTAnswer);
-        setChatGPTAnswer(chatGPTAnswer.data.choices[0].message.content);
+        const answer = chatGPTAnswer.data.choices[0].message.content;
+        setChatGPTAnswer(answer);
+
+        // caching
+        localStorage.setItem(
+          'chatGPTAnswer',
+          JSON.stringify({
+            value: answer,
+            timestamp: new Date(),
+          })
+        );
       }
     };
 
-    fetch();
+    const answerFromLocalStorage = localStorage.getItem('chatGPTAnswer');
+
+    if (!answerFromLocalStorage) {
+      fetch();
+    } else {
+      // Revalidate cache each 60 minutes
+      const parsedVal = JSON.parse(localStorage.getItem('chatGPTAnswer') as string) as {
+        timestamp: Date;
+        value: string;
+      };
+      const timeDiffInMinutes = moment().diff(parsedVal.timestamp, 'minutes');
+
+      if (timeDiffInMinutes > 60) {
+        fetch();
+      } else {
+        setChatGPTAnswer(parsedVal.value);
+      }
+    }
   }, [createPrompt, weather]);
 
   if (isLoading) {
