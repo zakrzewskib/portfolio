@@ -1,3 +1,3 @@
-export const dateToYYYYMMDD = (date: Date) => {
-  return date.toISOString().split('T')[0];
+export const removeFirstTwoWords = (str: string) => {
+  return str.split(' ').slice(2).join(' ');
 };

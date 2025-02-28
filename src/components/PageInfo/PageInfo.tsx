@@ -5,8 +5,9 @@ import { Skill } from '../ui';
 
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
-import atomOneDark from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-dark';
-import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light';
+// todo: Check light import of styles
+import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 SyntaxHighlighter.registerLanguage('typescript', ts);
 
 const codeToShow = `import { Link, useMediaQuery, useTheme } from '@mui/material';
