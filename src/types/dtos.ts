@@ -1,4 +1,9 @@
-export interface TeamDTO {
+export interface BALLDONTLIE_Meta {
+  next_cursor: number;
+  per_page: number;
+}
+
+interface TeamDTO {
   id: number;
   conference: 'East' | 'West';
   division: string;
@@ -21,4 +26,28 @@ export interface GameDTO {
   visitor_team_score: number;
   home_team: TeamDTO;
   visitor_team: TeamDTO;
+}
+
+export interface CurrentWeatherConditions {
+  LocalObservationDateTime: Date;
+  EpochTime: number;
+  WeatherText: string;
+  WeatherIcon: number;
+  HasPrecipitation: boolean;
+  PrecipitationType: string;
+  IsDayTime: boolean;
+  Temperature: {
+    Metric: {
+      Value: number;
+      Unit: 'C';
+      UnitType: number;
+    };
+    Imperial: {
+      Value: number;
+      Unit: 'F';
+      UnitType: number;
+    };
+  };
+  MobileLink: string;
+  Link: string;
 }

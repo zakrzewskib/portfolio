@@ -18,15 +18,12 @@ export const Time = () => {
   return (
     <Box
       sx={{
-        position: 'absolute',
-        top: 'calc(128px + 12px)',
-        right: 0,
-        display: { xs: 'none', md: 'flex' },
+        display: 'flex',
         gap: 1,
       }}
     >
+      <Typography>I live in: Warsaw, Poland</Typography>
       <Typography fontWeight='bold'>{moment(date).tz('Europe/Warsaw').format('LTS')},</Typography>
-      <Typography>Warsaw, Poland</Typography>
     </Box>
   );
 };

@@ -1,14 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { nbaAPI } from './api/nbaAPISlice';
+import { weatherAPI } from './api/weatherAPISlice';
 
 export const store = configureStore({
   reducer: {
     [nbaAPI.reducerPath]: nbaAPI.reducer,
+    [weatherAPI.reducerPath]: weatherAPI.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(nbaAPI.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(nbaAPI.middleware).concat(weatherAPI.middleware),
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors

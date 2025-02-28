@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { NavLink } from 'react-router';
 import { Time } from '../components/time/Time';
 import { Skill } from '../components/ui/Skill';
+import { Weather } from '../components/Weather/Weather';
 
 export const MainPage = () => {
   return (
@@ -15,7 +16,6 @@ export const MainPage = () => {
         position: 'relative',
       }}
     >
-      <Time />
       <Box
         sx={{
           display: 'flex',
@@ -68,6 +68,11 @@ export const MainPage = () => {
             <Button variant='outlined' component={NavLink} to='/skills'>
               See my skills
             </Button>
+          </Box>
+
+          <Box mt={4}>
+            <Time />
+            <Weather />
           </Box>
         </Box>
       </Box>

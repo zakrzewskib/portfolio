@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { GameDTO, Meta } from '../../types';
+import { BALLDONTLIE_Meta, GameDTO } from '../../types';
 
 export const nbaAPI = createApi({
   reducerPath: 'nbaAPI',
@@ -14,7 +14,7 @@ export const nbaAPI = createApi({
     },
   }),
   endpoints: (build) => ({
-    getGames: build.query<{ data: GameDTO[]; meta: Meta }, { date: string }>({
+    getGames: build.query<{ data: GameDTO[]; meta: BALLDONTLIE_Meta }, { date: string }>({
       query: ({ date }) => `games?dates[]=${date}`,
       // Only have one cache entry
       serializeQueryArgs: ({ endpointName }) => {
