@@ -8,7 +8,7 @@ export const MainPage = () => {
   return (
     <Box
       sx={{
-        mt: { xs: 4, md: '-128px' },
+        mt: { xs: 4, md: 0 },
         display: 'flex',
         flexDirection: 'column',
         justifyContent: { xs: 'start', md: 'center' },

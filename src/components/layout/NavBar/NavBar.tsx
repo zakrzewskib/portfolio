@@ -19,14 +19,14 @@ const pages = [
     text: 'Skills',
     link: '/skills',
   },
-  {
-    text: 'Experience',
-    link: '/experience',
-  },
-  {
-    text: 'Teaching',
-    link: '/teaching',
-  },
+  // {
+  //   text: 'Experience',
+  //   link: '/experience',
+  // },
+  // {
+  //   text: 'Teaching',
+  //   link: '/teaching',
+  // },
 ];
 
 export const NavBar = ({ maxWidth }: LayoutProps) => {
