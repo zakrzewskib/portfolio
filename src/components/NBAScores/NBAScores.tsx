@@ -11,6 +11,7 @@ export const NBAScores = () => {
   const [date, setDate] = useState<Date>(new Date());
   const { data, isLoading } = useGetGamesQuery({ date: moment(date).format('YYYY-MM-DD') });
 
+  // todo: Add skeleton when loading
   if (isLoading) {
     return <GamesLoadingPlaceholder />;
   }
