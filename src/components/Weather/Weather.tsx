@@ -19,8 +19,8 @@ export const Weather = () => {
 
   return (
     <Box>
-      <Typography sx={{ mb: 1 }}>
-        It's {temperature}°C and {weatherText} today.
+      <Typography>
+        It's {temperature}°C and {weatherText.toLowerCase()} today.
       </Typography>
       <ChatGPTWeatherSuggestion weather={data[0]} />
     </Box>

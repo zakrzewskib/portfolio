@@ -20,6 +20,7 @@ export const Time = () => {
       sx={{
         display: 'flex',
         gap: '4px',
+        mb: 1,
       }}
     >
       <Typography>I live in: Warsaw, Poland</Typography> and it's:
