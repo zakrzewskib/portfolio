@@ -26,6 +26,8 @@ jobs:
         run: npm run build --if-present
         env:
           VITE_BALLDONTLIE_API_KEY: ${{ secrets.VITE_BALLDONTLIE_API_KEY }}
+          VITE_ACCUWEATHER_API_KEY: ${{ secrets.VITE_ACCUWEATHER_API_KEY }}
+          VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
      
 
       - name: Deploy with gh-pages
