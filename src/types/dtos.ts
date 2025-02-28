@@ -51,3 +51,13 @@ export interface CurrentWeatherConditions {
   MobileLink: string;
   Link: string;
 }
+
+export interface ChatGPTCompletionResponse {
+  choices: [
+    {
+      message: {
+        content: string;
+      };
+    }
+  ];
+}

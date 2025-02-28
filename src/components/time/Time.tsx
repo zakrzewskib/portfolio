@@ -19,11 +19,13 @@ export const Time = () => {
     <Box
       sx={{
         display: 'flex',
-        gap: 1,
+        gap: '4px',
       }}
     >
-      <Typography>I live in: Warsaw, Poland</Typography>
-      <Typography fontWeight='bold'>{moment(date).tz('Europe/Warsaw').format('LTS')},</Typography>
+      <Typography>I live in: Warsaw, Poland</Typography> and it's:
+      <Box display='flex'>
+        <Typography fontWeight='bold'>{moment(date).tz('Europe/Warsaw').format('LTS')}</Typography>,
+      </Box>
     </Box>
   );
 };

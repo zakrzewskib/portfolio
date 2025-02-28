@@ -1,5 +1,6 @@
-import { CircularProgress, Typography } from '@mui/material';
+import { Box, CircularProgress, Typography } from '@mui/material';
 import { useGetCurrentConditionsQuery } from '../../store/api/weatherAPISlice';
+import { ChatGPTWeatherSuggestion } from './ChatGPTWeatherSuggestion';
 
 export const Weather = () => {
   const { data, isLoading } = useGetCurrentConditionsQuery({ locationCode: 274663 });
@@ -9,17 +10,19 @@ export const Weather = () => {
   }
 
   if (!data) {
-    return <Typography>Couldn't load weather...</Typography>;
+    return <Typography>Couldn't load the weather...</Typography>;
   }
 
   // todo: Add displaying temperature in Fahrenheit depending on user's location
   const temperature = data[0].Temperature.Metric.Value;
   const weatherText = data[0].WeatherText;
 
-  // todo: Add chat gpt response like: "6.1°C and cloudy? It’s a bit chilly, but not too bad. Perfect for a cozy vibe, maybe with a warm drink. 🌥️"
   return (
-    <Typography>
-      It's {temperature}°C and {weatherText}
-    </Typography>
+    <Box>
+      <Typography sx={{ mb: 1 }}>
+        It's {temperature}°C and {weatherText} today.
+      </Typography>
+      <ChatGPTWeatherSuggestion weather={data[0]} />
+    </Box>
   );
 };
