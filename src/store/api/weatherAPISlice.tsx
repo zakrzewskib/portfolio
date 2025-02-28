@@ -4,7 +4,7 @@ import { CurrentWeatherConditions } from '../../types';
 export const weatherAPI = createApi({
   reducerPath: 'weatherAPI',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://dataservice.accuweather.com/',
+    baseUrl: 'https://dataservice.accuweather.com/',
   }),
   endpoints: (build) => ({
     getCurrentConditions: build.query<CurrentWeatherConditions[], { locationCode: number }>({
