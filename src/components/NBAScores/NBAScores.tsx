@@ -5,15 +5,16 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import nbaLogos from '../../libraries/React-NBA-Logos/src/index';
 import { useGetGamesQuery } from '../../store/api/nbaAPISlice';
 import { GamesLoadingPlaceholder } from './GamesLoadingPlaceholder';
+import { GamesLoadingSkeleton } from './GamesLoadingSkeleton';
 import { NBAGame } from './NBAGame';
+import { NBA_SCORES_HEIGHT } from './constants';
 
 export const NBAScores = () => {
   const [date, setDate] = useState<Date>(new Date());
   const { data, isLoading } = useGetGamesQuery({ date: moment(date).format('YYYY-MM-DD') });
 
-  // todo: Add skeleton when loading
   if (isLoading) {
-    return <GamesLoadingPlaceholder />;
+    return <GamesLoadingSkeleton />;
   }
 
   if (!data) {
@@ -31,7 +32,7 @@ export const NBAScores = () => {
       next={handleLoadMoreGames}
       hasMore={true}
       loader={<GamesLoadingPlaceholder />}
-      height={350}
+      height={NBA_SCORES_HEIGHT}
       style={{
         display: 'flex',
         flexDirection: 'column',
