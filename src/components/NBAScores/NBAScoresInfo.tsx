@@ -49,7 +49,7 @@ export const NBAScoresInfo = () => {
         </Box>
 
         <Box flex={1}>
-          <Typography variant='h5' mb={2}>
+          <Typography variant='h5' component='h3' mb={2}>
             Recent NBA Games:
           </Typography>
           <NBAScores />

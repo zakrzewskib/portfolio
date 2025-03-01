@@ -40,7 +40,7 @@ export const ChatGPTSetupInfo = withDarkMode(() => {
             <Box
               component='img'
               src={isDarkMode ? openAIScreenshotDark : openAIScreenshotLight}
-              alt='Screenshot of openAI API'
+              alt='' // not needed - we have figcaption
               mb={2}
             />
             <Typography fontWeight='bold' component='figcaption'>
@@ -51,7 +51,7 @@ export const ChatGPTSetupInfo = withDarkMode(() => {
             <Box
               component='img'
               src={isDarkMode ? chatGPTScreenshotDark : chatGPTScreenshotLight}
-              alt='Screenshot of chat with chatGPT'
+              alt='' // not needed - we have figcaption
               mb={2}
             />
             <Typography fontWeight='bold' component='figcaption'>
