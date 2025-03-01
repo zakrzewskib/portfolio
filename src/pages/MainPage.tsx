@@ -12,8 +12,7 @@ export const MainPage = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: { xs: 'start', md: 'center' },
-        height: '100vh',
-        position: 'relative',
+        height: { sm: 'calc(100vh - 128px)' },
       }}
     >
       <Box
@@ -56,7 +55,7 @@ export const MainPage = () => {
             </Link>{' '}
             page.
           </Typography> */}
-          <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 2, mt: 4 }}>
+          <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 2, mt: 3, mb: 3 }}>
             <Button
               variant='contained'
               component={NavLink}
@@ -70,7 +69,7 @@ export const MainPage = () => {
             </Button>
           </Box>
 
-          <Box mt={4}>
+          <Box mb={2}>
             <Time />
             <Weather />
           </Box>
