@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
-import chatGPTScreenshotDark from '../../assets/images/chat-gpt-chat-dark.png';
-import chatGPTScreenshotLight from '../../assets/images/chat-gpt-chat-light.png';
-import openAIScreenshotDark from '../../assets/images/openAI-developer-platform-dark.png';
-import openAIScreenshotLight from '../../assets/images/openAI-developer-platform-light.png';
+import chatGPTScreenshotDark from '../../assets/images/chat-gpt-chat-dark.webp';
+import chatGPTScreenshotLight from '../../assets/images/chat-gpt-chat-light.webp';
+import openAIScreenshotDark from '../../assets/images/openAI-developer-platform-dark.webp';
+import openAIScreenshotLight from '../../assets/images/openAI-developer-platform-light.webp';
 import { withDarkMode } from '../../HOCs';
 import { useIsDarkMode } from '../../hooks';
 import { Weather } from '../Weather/Weather';
