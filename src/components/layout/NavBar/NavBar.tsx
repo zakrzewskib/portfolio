@@ -34,6 +34,7 @@ export const NavBar = ({ maxWidth }: LayoutProps) => {
     <AppBar position='sticky'>
       <Container maxWidth={maxWidth} component='nav'>
         <Toolbar disableGutters>
+          {/* todo: Replace mobile menu with drawer */}
           <MobileMenu pages={pages} />
 
           <Logo />
