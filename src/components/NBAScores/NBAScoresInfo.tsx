@@ -31,19 +31,20 @@ export const NBAScoresInfo = () => {
             I also wanted to try out some 'random' API - which I found here:{' '}
             <Link target='_blank' href='https://icons8.com'>
               https://github.com/public-apis/public-apis
-            </Link>{' '}
-            and I choose{' '}
+            </Link>
+            . I choose{' '}
             <Link target='_blank' href='https://www.balldontlie.io'>
               balldontlie
             </Link>{' '}
-            for API for Live Sports Data. I needed to create an account there, get API key and add it into github pages.
-            I also added:
+            API for Live Sports Data. I needed to create an account there, get API key and add it into github pages. I
+            also added:
             <Box sx={{ mt: 1, mb: 1 }}>
               <Skill>#infinite scroll</Skill>
             </Box>
             with:{' '}
-            <Link href='https://www.npmjs.com/package/react-infinite-scroll-component'>react-infinite-scroll</Link> +
-            some additional setup on RTK Query was needed.
+            <Link href='https://www.npmjs.com/package/react-infinite-scroll-component'>react-infinite-scroll</Link>. I
+            needed to add some additional setup on RTK Query.
+            {/* todo: Add dialog on hover that shows this setup */}
           </Box>
         </Box>
 

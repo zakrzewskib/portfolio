@@ -54,7 +54,7 @@ export const PageInfo = withDarkMode(() => {
       <Box
         sx={{
           display: 'flex',
-          gap: { xs: 4, lg: 8 },
+          gap: { xs: 0, lg: 8 },
           flexDirection: { xs: 'column', lg: 'row' },
         }}
       >

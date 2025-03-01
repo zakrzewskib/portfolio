@@ -5,7 +5,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import nbaLogos from '../../libraries/React-NBA-Logos/src/index';
 import { useGetGamesQuery } from '../../store/api/nbaAPISlice';
 import { GamesLoadingPlaceholder } from './GamesLoadingPlaceholder';
-import { NBAGame } from './NBAGame/NBAGame';
+import { NBAGame } from './NBAGame';
 
 export const NBAScores = () => {
   const [date, setDate] = useState<Date>(new Date());

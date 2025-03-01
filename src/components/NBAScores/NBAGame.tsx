@@ -1,8 +1,8 @@
 import { Box, Paper, Typography } from '@mui/material';
 
 import moment from 'moment';
-import { Icon } from '../../../libraries/React-NBA-Logos/src';
-import { GameDTO } from '../../../types';
+import { Icon } from '../../libraries/React-NBA-Logos/src';
+import { GameDTO } from '../../types';
 
 interface NBAGameProps {
   game: GameDTO;
