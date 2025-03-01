@@ -69,7 +69,7 @@ export const MainPage = () => {
             </Button>
           </Box>
 
-          <Box mb={2}>
+          <Box>
             <Time />
             <Weather />
           </Box>

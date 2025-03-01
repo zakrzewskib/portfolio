@@ -1,14 +1,11 @@
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { withDarkMode } from '../../HOCs';
 import { useIsDarkMode } from '../../hooks';
 import { Skill } from '../ui';
-
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
-// todo: Check light import of styles
+// todo: Check light import of SyntaxHighlighter
+import { NavLink } from 'react-router';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-SyntaxHighlighter.registerLanguage('typescript', ts);
 
 const codeToShow = `import { Link, useMediaQuery, useTheme } from '@mui/material';
 import { NavLink } from 'react-router';
@@ -74,8 +71,19 @@ export const PageInfo = withDarkMode(() => {
             <Skill>#theming</Skill>
           </Box>
           Also I displayed this code with:
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 3, mt: 1 }}>
             <Skill>#react-syntax-highlighter</Skill>
+          </Box>
+          <Box>
+            {' '}
+            <Button
+              variant='contained'
+              component={NavLink}
+              to='https://github.com/zakrzewskib/portfolio'
+              target='_blank'
+            >
+              See the source code on github
+            </Button>
           </Box>
         </Box>
 

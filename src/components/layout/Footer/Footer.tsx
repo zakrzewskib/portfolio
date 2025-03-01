@@ -3,7 +3,7 @@ import { LayoutProps } from '../../../types';
 
 export const Footer = ({ maxWidth }: LayoutProps) => {
   return (
-    <AppBar position='static' component='footer'>
+    <AppBar position='static' component='footer' sx={{ mt: 2 }}>
       <Container maxWidth={maxWidth}>
         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', gap: '4px' }}>
