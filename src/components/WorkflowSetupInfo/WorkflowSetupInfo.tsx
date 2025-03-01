@@ -36,7 +36,7 @@ export const WorkflowSetupInfo = withDarkMode(() => {
       <Box
         sx={{
           display: 'flex',
-          gap: { xs: 0, lg: 8 },
+          gap: { xs: 2, lg: 8 },
           flexDirection: { xs: 'column', lg: 'row' },
         }}
       >
@@ -49,7 +49,7 @@ export const WorkflowSetupInfo = withDarkMode(() => {
           I created a workflow and added all necessary API keys to the environment.
         </Box>
 
-        <Box>
+        <Box sx={{ maxWidth: '800px' }}>
           <SyntaxHighlighter
             language='yaml'
             style={style}

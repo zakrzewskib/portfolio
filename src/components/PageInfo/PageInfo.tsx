@@ -51,7 +51,7 @@ export const PageInfo = withDarkMode(() => {
       <Box
         sx={{
           display: 'flex',
-          gap: { xs: 0, lg: 8 },
+          gap: { xs: 2, lg: 8 },
           flexDirection: { xs: 'column', lg: 'row' },
         }}
       >
@@ -87,7 +87,7 @@ export const PageInfo = withDarkMode(() => {
           </Box>
         </Box>
 
-        <Box>
+        <Box sx={{ maxWidth: '800px' }}>
           <SyntaxHighlighter
             language='typescript'
             style={style}

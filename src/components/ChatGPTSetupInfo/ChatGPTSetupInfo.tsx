@@ -23,7 +23,7 @@ export const ChatGPTSetupInfo = withDarkMode(() => {
           flexDirection: { xs: 'column', lg: 'row' },
         }}
       >
-        <Box className='maxWidthForText' sx={{ flex: 1 }}>
+        <Box className='maxWidthForText' sx={{ mb: 2 }}>
           <Typography mb={2}>On the main page you might have seen this short text about the weather:</Typography>
           <Box sx={{ mb: 2 }}>
             <Weather />
@@ -35,7 +35,7 @@ export const ChatGPTSetupInfo = withDarkMode(() => {
           and with it's billing cost helped me none other than the chat itself.
         </Box>
 
-        <Box sx={{ flex: 2 }}>
+        <Box>
           <Box component='figure' mb={4}>
             <Box
               component='img'
