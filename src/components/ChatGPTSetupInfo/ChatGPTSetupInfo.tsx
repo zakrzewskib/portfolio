@@ -1,9 +1,15 @@
 import { Box, Typography } from '@mui/material';
-import chatGPTScreenshot from '../../assets/images/chat-gpt-chat.png';
-import openAIScreenshot from '../../assets/images/openAI-developer-platform.png';
+import chatGPTScreenshotDark from '../../assets/images/chat-gpt-chat-dark.png';
+import chatGPTScreenshotLight from '../../assets/images/chat-gpt-chat-light.png';
+import openAIScreenshotDark from '../../assets/images/openAI-developer-platform-dark.png';
+import openAIScreenshotLight from '../../assets/images/openAI-developer-platform-light.png';
+import { withDarkMode } from '../../HOCs';
+import { useIsDarkMode } from '../../hooks';
 import { Weather } from '../Weather/Weather';
 
-export const ChatGPTSetupInfo = () => {
+export const ChatGPTSetupInfo = withDarkMode(() => {
+  const isDarkMode = useIsDarkMode();
+
   return (
     <Box sx={{ marginBlock: 4 }} component='section' id='layout'>
       <Typography variant='h3' component='h2' sx={{ mb: 4 }}>
@@ -31,15 +37,29 @@ export const ChatGPTSetupInfo = () => {
 
         <Box sx={{ flex: 2 }}>
           <Box component='figure' mb={4}>
-            <Box component='img' src={openAIScreenshot} alt='' mb={1} />
-            <Typography component='figcaption'>Screenshot of Open AI</Typography>
+            <Box
+              component='img'
+              src={isDarkMode ? openAIScreenshotDark : openAIScreenshotLight}
+              alt='Screenshot of openAI API'
+              mb={2}
+            />
+            <Typography fontWeight='bold' component='figcaption'>
+              Screenshot of Open AI
+            </Typography>
           </Box>
           <Box component='figure' mb={4}>
-            <Box component='img' src={chatGPTScreenshot} alt='' mb={1} />
-            <Typography component='figcaption'>Screenshot of chatGPT</Typography>
+            <Box
+              component='img'
+              src={isDarkMode ? chatGPTScreenshotDark : chatGPTScreenshotLight}
+              alt='Screenshot of chat with chatGPT'
+              mb={2}
+            />
+            <Typography fontWeight='bold' component='figcaption'>
+              Screenshot of chat with chatGPT
+            </Typography>
           </Box>
         </Box>
       </Box>
     </Box>
   );
-};
+});
