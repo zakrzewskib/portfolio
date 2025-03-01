@@ -38,6 +38,7 @@ export const NBAScores = () => {
         flexDirection: 'column',
         gap: '12px',
       }}
+      className='maxWidthForText'
     >
       {data.data.map((game) => (
         <NBAGame
