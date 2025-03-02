@@ -63,26 +63,26 @@ export const PageInfo = withDarkMode(() => {
             <Skill>#TypeScript</Skill>
           </Box>
           React.js and TypeScript are main technologies that I know and use for webdev. I also wanted to try out MUI -
-          popular UI library. {isLgAndLower ? 'Below' : 'On the right'} you can see some of my code. It and the entire
-          page has:
+          popular UI library. {isLgAndLower ? 'Below' : 'On the right'} you can see some of my code. It shows some of
+          MUI and React features and benefits:
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
             <Skill>#responsive design</Skill>
             <Skill>#React Router</Skill>
             <Skill>#theming</Skill>
           </Box>
           Also I displayed this code with:
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 3, mt: 1 }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, mt: 1 }}>
             <Skill>#react-syntax-highlighter</Skill>
           </Box>
           <Box>
-            {' '}
+            <Typography sx={{ mb: 1 }}>You can click the button below to see the source code:</Typography>
             <Button
               variant='contained'
               component={NavLink}
               to='https://github.com/zakrzewskib/portfolio'
               target='_blank'
             >
-              See the source code on github
+              Source code on github
             </Button>
           </Box>
         </Box>
