@@ -24,10 +24,10 @@ export const MainPage = () => {
       >
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, flex: 1 }}>
           <Typography variant='h3' component='h1'>
-            Hello! I'm Bartosz Zakrzewski
+            Hello! My name is Bartosz Zakrzewski
           </Typography>
           <Typography variant='h5' component='h2'>
-            I am Frontend Developer living in Warsaw, Poland
+            and I am Frontend Developer
           </Typography>
         </Box>
         <Box className='maxWidthForText' sx={{ flex: 1 }}>
@@ -43,19 +43,12 @@ export const MainPage = () => {
             <Skill>#learning new things</Skill>
           </Box>
           <Typography variant='body1'>
-            There are so many frameworks and libraries and also some internal technologies at specific companies that
-            being a good developer is adapting to them and building something using them. This whole portfolio page was
-            created to test some of the technologies I learned, but also to use technologies that I don't really know
-            that well.
+            There are so many frameworks, libraries and some internal technologies at specific companies, that being a
+            good developer is adapting to them and building something using these technologies. This whole portfolio
+            page was created to test some of the technologies I learned, but also to use technologies that I don't
+            really know that well.
           </Typography>
-          {/* <Typography variant='body1'>
-            Also you can see some more technologies used on the{' '}
-            <Link color='textPrimary' component={NavLink} to='/skills'>
-              skills
-            </Link>{' '}
-            page.
-          </Typography> */}
-          <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 2, mt: 3, mb: 3 }}>
+          <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 2, mt: 2, mb: 2 }}>
             <Button
               variant='contained'
               component={NavLink}

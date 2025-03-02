@@ -16,11 +16,7 @@ export const Time = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        mb: 1,
-      }}
-    >
+    <Box>
       <Typography component='span'>I live in: Warsaw, Poland</Typography> and it's:{' '}
       <Typography fontWeight='bold' component='span'>
         {moment(date).tz('Europe/Warsaw').format('LTS')}

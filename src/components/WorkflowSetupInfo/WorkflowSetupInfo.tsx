@@ -41,7 +41,7 @@ export const WorkflowSetupInfo = withDarkMode(() => {
         }}
       >
         <Box className='maxWidthForText'>
-          I would like to brag about that I managed to add automated deployment. To do this, it was necessary to use:
+          I added automated deployment - to do this, it was necessary to use:
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 1, mt: 1 }}>
             <Skill>#Github Actions</Skill>
             <Skill>#Github Pages</Skill>
