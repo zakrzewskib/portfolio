@@ -3,8 +3,8 @@ import { DetectedObject } from '@tensorflow-models/coco-ssd';
 const TEXT_Y_SHIFT = 14;
 const TEXT_X_SHIFT = 2;
 
-export const drawPredictionsRect = (ctx: CanvasRenderingContext2D, detections: DetectedObject[]) => {
-  detections.forEach((prediction) => {
+export const drawPredictionsRect = (ctx: CanvasRenderingContext2D, predictions: DetectedObject[]) => {
+  predictions.forEach((prediction) => {
     const [x, y, width, height] = prediction['bbox'];
     const text = prediction['class'];
 
