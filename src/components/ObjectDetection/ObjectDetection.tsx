@@ -6,7 +6,6 @@ import { drawPredictionsRect } from './canvasUtils';
 import { ImageUploader } from './ImageUploader';
 
 // todo: Add loading state
-
 export const ObjectDetection = () => {
   const imgRef = useRef<HTMLImageElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
