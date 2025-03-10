@@ -5,6 +5,7 @@ import openAIScreenshotDark from '../../assets/images/openAI-developer-platform-
 import openAIScreenshotLight from '../../assets/images/openAI-developer-platform-light.webp';
 import { withDarkMode } from '../../HOCs';
 import { useIsDarkMode } from '../../hooks';
+import { Skill } from '../ui';
 import { Weather } from '../Weather/Weather';
 
 export const ChatGPTSetupInfo = withDarkMode(() => {
@@ -28,11 +29,11 @@ export const ChatGPTSetupInfo = withDarkMode(() => {
           <Box sx={{ mb: 2 }}>
             <Weather />
           </Box>
-          It is actually a ChatGPT answer! I used{' '}
-          <Typography component='span' fontWeight='bold'>
-            OpenAI API
-          </Typography>{' '}
-          and with it's billing cost helped me none other than the chat itself.
+          It is actually a ChatGPT answer! I used: and with it's billing cost helped me none other the chatGPT itself.
+          <Box sx={{ display: 'flex', flexWrap: 'true', alignItems: 'center', gap: 1, mb: 1, mt: 1 }}>
+            <Skill>#Open AI</Skill>
+            <Skill>#ChatGPT</Skill>
+          </Box>
         </Box>
 
         <Box>
