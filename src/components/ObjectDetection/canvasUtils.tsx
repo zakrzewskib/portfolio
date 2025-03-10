@@ -1,6 +1,9 @@
 import { DetectedObject } from '@tensorflow-models/coco-ssd';
 
-export const drawRect = (ctx: CanvasRenderingContext2D, detections: DetectedObject[]) => {
+const TEXT_Y_SHIFT = 14;
+const TEXT_X_SHIFT = 2;
+
+export const drawPredictionsRect = (ctx: CanvasRenderingContext2D, detections: DetectedObject[]) => {
   detections.forEach((prediction) => {
     const [x, y, width, height] = prediction['bbox'];
     const text = prediction['class'];
@@ -10,9 +13,9 @@ export const drawRect = (ctx: CanvasRenderingContext2D, detections: DetectedObje
 
     ctx.beginPath();
 
-    ctx.font = '18px Arial';
+    ctx.font = '16px Arial';
     ctx.fillStyle = '#' + color;
-    ctx.fillText(text, x, y);
+    ctx.fillText(text, x + TEXT_X_SHIFT, y + TEXT_Y_SHIFT);
 
     ctx.strokeStyle = '#' + color;
     ctx.rect(x, y, width, height);

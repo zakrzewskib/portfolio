@@ -1,19 +1,18 @@
 import { Box } from '@mui/material';
 import * as cocossd from '@tensorflow-models/coco-ssd';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import cat from '../../assets/images/cat-eating.jpg';
-import { drawRect } from './canvasUtils';
+import { drawPredictionsRect } from './canvasUtils';
+import { ImageUploader } from './ImageUploader';
 
 // todo: Add loading state
 
 export const ObjectDetection = () => {
   const imgRef = useRef<HTMLImageElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [, setModel] = useState<cocossd.ObjectDetection>();
 
   useEffect(() => {
     cocossd.load().then((model) => {
-      setModel(model);
       detectObjectsAndDrawRects(model);
     });
   }, []);
@@ -21,21 +20,41 @@ export const ObjectDetection = () => {
   const detectObjectsAndDrawRects = (model: cocossd.ObjectDetection) => {
     const img = imgRef.current!;
     const canvas = canvasRef.current!;
+    const ctx = canvas.getContext('2d')!;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     model.detect(img).then((predictions) => {
       canvas.width = img.width;
       canvas.height = img.height;
 
-      const ctx = canvas.getContext('2d')!;
-      drawRect(ctx, predictions);
+      drawPredictionsRect(ctx, predictions);
+    });
+  };
+
+  const handleImageUpload = (file: File) => {
+    imgRef.current!.src = URL.createObjectURL(file);
+
+    cocossd.load().then((model) => {
+      detectObjectsAndDrawRects(model);
     });
   };
 
   return (
     <Box sx={{ position: 'relative' }}>
-      <img src={cat} alt='Cat eating from a bowl' ref={imgRef} />
+      <Box component='img' src={cat} alt='Cat eating from a bowl' ref={imgRef} sx={{ mb: 2, maxHeight: '550px' }} />
 
-      <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, zIndex: 2, textAlign: 'center' }} />
+      <Box
+        component='canvas'
+        ref={canvasRef}
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: 2,
+        }}
+      />
+
+      <ImageUploader onImageUpload={handleImageUpload} />
     </Box>
   );
 };

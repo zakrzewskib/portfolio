@@ -17,7 +17,7 @@ export const ObjectDetectionInfo = () => {
           flexDirection: { xs: 'column', lg: 'row' },
         }}
       >
-        <Box className='maxWidthForText' sx={{ mb: 2 }}>
+        <Box className='maxWidthForText' sx={{ mb: 2, flex: 1 }}>
           This text will be about Tensorflow.js
         </Box>
 
