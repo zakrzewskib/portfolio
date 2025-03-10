@@ -22,6 +22,7 @@ export const SkillsPage = () => {
       <NBAScoresInfo />
       <WorkflowSetupInfo />
       <ChatGPTSetupInfo />
+      Work in progres... More to come!
     </Box>
   );
 };
